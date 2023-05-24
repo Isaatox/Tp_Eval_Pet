@@ -5,6 +5,8 @@ import java.time.LocalDate;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Animal {
+    //Création de la table Animal avec ces Setter & Setter
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

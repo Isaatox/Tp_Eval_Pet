@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 
 @Entity
 public class Cat extends Animal{
+    //Création de la table Cat avec ces Setter & Setter
+
     private String chipId;
 
     public Cat() {

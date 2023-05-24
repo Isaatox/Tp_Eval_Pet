@@ -6,6 +6,8 @@ import java.util.Set;
 
 @Entity
 public class PetStore {
+    //Création de la table PetStore avec ces Setter & Setter
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

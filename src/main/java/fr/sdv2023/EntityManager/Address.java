@@ -3,8 +3,9 @@ package fr.sdv2023.EntityManager;
 import javax.persistence.*;
 
 @Entity
-public class Address
-{
+public class Address {
+    //Création de la table Address avec ces Setter & Setter
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

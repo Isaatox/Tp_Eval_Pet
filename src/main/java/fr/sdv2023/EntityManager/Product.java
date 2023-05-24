@@ -5,6 +5,8 @@ import java.util.Set;
 
 @Entity
 public class Product {
+    //Création de la table Product avec ces Setter & Setter
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

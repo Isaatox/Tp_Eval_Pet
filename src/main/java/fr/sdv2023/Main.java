@@ -10,12 +10,15 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        // Initialiser la connection à la BDD
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("petstore");
 
         EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin(); // Start a transaction
+        em.getTransaction().begin();
         if(em.isOpen()){
-            System.out.println("Open");
+            System.out.println("Connecté");
+
+            // Ajoutez différentes données dans chaque table
             Product product1 = new Product();
             product1.setNom("croquette");
             product1.setLabel("Croquette");
@@ -132,11 +135,13 @@ public class Main {
             petStore3.getProducts().add(product2);
             petStore3.getProducts().add(product3);
 
+            //Selectionner les animaux d'un Pet Store
             String query = "SELECT a FROM Animal a JOIN a.petStore p WHERE p.id = :IdPetStore";
             List<Animal> animals = em.createQuery(query, Animal.class)
                     .setParameter("IdPetStore", 1L)
                     .getResultList();
 
+            //Différencier Chat ou Poisson
             for (Animal animal : animals) {
                 if (animal instanceof Cat) {
                     Cat cat = (Cat) animal;
@@ -149,9 +154,10 @@ public class Main {
 
             em.getTransaction().commit();
         } else {
-            System.out.println("non open");
+            System.out.println("non connecté");
         }
-        em.close(); // Close the EntityManager
+        //Fermer la connection à la BDD
+        em.close();
         emf.close();
     }
 }
