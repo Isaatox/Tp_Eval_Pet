@@ -12,6 +12,7 @@ Afin d'initialiser sa connection à sa Base de données :
 1. Créez une base de donnée appelez **petstore**
 2. Dans ressources/META-INF/ renomez le fichier **persistence.exemple.xml** en **persistence.xml**
 3. Ainsi dans ce fichier vous trouverez **DB_HOST** / **DB_NAME** / **DB_USER** / **DB_PASS** et rentrez vos informations de connection
+4. Actuellement le driver mariaDB est utilisé, vous pouvez le modifier par exemple avec postgresqlsi vous le souhaitez.
 
 ## Utilisez l'application
 
